@@ -18,7 +18,7 @@ var user_review = new mongoose.Schema({
 })
 
 var Reviews = mongoose.model('Reviews', new mongoose.Schema({
-  house_id: Number,
+  house_id: { type: Number, unique: true },
   total_rating: Number,
   total_rating_categories: {
     communication: Number,

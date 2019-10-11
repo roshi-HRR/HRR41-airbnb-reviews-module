@@ -6,18 +6,18 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}, functio
   if (err) {
     console.log('error connecting to db -->', err);
   } else {
-    console.log("Connected successfully to server");
+    console.log("Connected successfully to database");
   }
 });
 
-var accessAllData = (callback) => {
-  Reviews.find((err, data) => {
+var reset = (callback) => {
+  Reviews.deleteMany({},(err) => {
     if (err) {
-      callback(err, null);
+      callback(err);
     } else {
-      callback(null, data);
+      callback(null);
     }
-  });
+  })
 };
 
 var accessOneHouse = (id, callback) => {
@@ -41,11 +41,11 @@ var addOneHouse = (house, callback) => {
 };
 
 var addOneReview = (review, house_id, callback) => {
-  Reviews.findOne({'house_id': id}, (err, house) => {
+  Reviews.findOne({'house_id': house_id}, (err, house) => {
     if (err) {
       callback(err);
     } else {
-      house.reviews.push(review);
+      house.user_reviews.push(review);
       house.save((err) => {
         if (err) {
           callback(err);
@@ -56,3 +56,10 @@ var addOneReview = (review, house_id, callback) => {
     }
   })
 }
+
+module.exports = {
+  'reset': reset,
+  'accessOneHouse': accessOneHouse,
+  'addOneHouse': addOneHouse,
+  'addOneReview': addOneReview
+};
