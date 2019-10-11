@@ -10,7 +10,6 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}, functio
   }
 });
 
-//access all data
 var accessAllData = (callback) => {
   Reviews.find((err, data) => {
     if (err) {
@@ -20,7 +19,7 @@ var accessAllData = (callback) => {
     }
   });
 };
-//access one house
+
 var accessOneHouse = (id, callback) => {
   Reviews.findOne({'house_id': id}, (err, house) => {
     if (err) {
@@ -30,7 +29,7 @@ var accessOneHouse = (id, callback) => {
     }
   });
 };
-//add one house (no reviews yet)
+
 var addOneHouse = (house, callback) => {
   Reviews.create(house, (err) => {
     if (err) {
@@ -40,7 +39,7 @@ var addOneHouse = (house, callback) => {
     }
   })
 };
-//add one review
+
 var addOneReview = (review, house_id, callback) => {
   Reviews.findOne({'house_id': id}, (err, house) => {
     if (err) {
