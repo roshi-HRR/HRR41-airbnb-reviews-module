@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const uri = 'mongodb://localhost:27017/reviews';
+const uri = 'mongodb://localhost/reviews';
+const Reviews = require('./model.js');
 
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}, function(err) {
   if (err) {
@@ -9,33 +10,50 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}, functio
   }
 });
 
-var user_review = new mongoose.Schema({
-  user_id: Number,
-  user_pic: String,
-  user_name: String,
-  review_date: String,
-  review_text: String,
-  review_language: String,
-  review_ratings: {
-    communication: Number,
-    location: Number,
-    value: Number,
-    check_in: Number,
-    accuracy: Number,
-    cleanliness: Number
-  }
-})
-
-var Reviews = mongoose.model('Reviews', new mongoose.Schema({
-  house_id: Number,
-  total_rating: Number,
-  total_rating_categories: {
-    communication: Number,
-    location: Number,
-    value: Number,
-    check_in: Number,
-    accuracy: Number,
-    cleanliness: Number
-  },
-  user_reviews: [user_review]
-}));
+//access all data
+var accessAllData = (callback) => {
+  Reviews.find((err, data) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, data);
+    }
+  });
+};
+//access one house
+var accessOneHouse = (id, callback) => {
+  Reviews.findOne({'house_id': id}, (err, house) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, house);
+    }
+  });
+};
+//add one house (no reviews yet)
+var addOneHouse = (house, callback) => {
+  Reviews.create(house, (err) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null);
+    }
+  })
+};
+//add one review
+var addOneReview = (review, house_id, callback) => {
+  Reviews.findOne({'house_id': id}, (err, house) => {
+    if (err) {
+      callback(err);
+    } else {
+      house.reviews.push(review);
+      house.save((err) => {
+        if (err) {
+          callback(err);
+        } else {
+          callback(null);
+        }
+      });
+    }
+  })
+}
