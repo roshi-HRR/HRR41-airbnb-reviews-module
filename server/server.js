@@ -39,6 +39,7 @@ app.post('/rooms/review', (req, res) => {
       console.log('error adding review to house in database:', err);
       res.end();
     } else {
+      //console.log('infooo recieved by router', req.body.review, req.body.house_id);
       console.log('review stored in house database successfully!!!');
       res.send(req.body);
     }

@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 
-var user_review = new mongoose.Schema({
+var user_reviewSchema = new mongoose.Schema({
   user_id: Number,
   user_pic: String,
   user_name: String,
   review_date: String,
   review_text: String,
-  review_language: String,
   review_ratings: {
     communication: Number,
     location: Number,
@@ -17,7 +16,7 @@ var user_review = new mongoose.Schema({
   }
 })
 
-var Reviews = mongoose.model('Reviews', new mongoose.Schema({
+var reviewSchema = new mongoose.Schema({
   house_id: { type: Number, unique: true },
   total_rating: Number,
   total_rating_categories: {
@@ -28,7 +27,10 @@ var Reviews = mongoose.model('Reviews', new mongoose.Schema({
     accuracy: Number,
     cleanliness: Number
   },
-  user_reviews: [user_review]
-}));
+  user_reviews: [user_reviewSchema]
+})
 
-module.exports = Reviews;
+var Review = mongoose.model('Reviews', reviewSchema);
+var User_review = mongoose.model('User_review', user_reviewSchema);
+
+module.exports = {'Review': Review, 'User_review': User_review};

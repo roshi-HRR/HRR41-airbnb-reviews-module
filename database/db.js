@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const uri = 'mongodb://localhost/reviews';
-const Reviews = require('./model.js');
+const model = require('./model.js');
 
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}, function(err) {
   if (err) {
@@ -11,7 +11,7 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}, functio
 });
 
 var reset = (callback) => {
-  Reviews.deleteMany({},(err) => {
+  model.Review.deleteMany({},(err) => {
     if (err) {
       callback(err);
     } else {
@@ -21,7 +21,7 @@ var reset = (callback) => {
 };
 
 var accessOneHouse = (id, callback) => {
-  Reviews.findOne({'house_id': id}, (err, house) => {
+  model.Review.findOne({'house_id': id}, (err, house) => {
     if (err) {
       callback(err, null);
     } else {
@@ -31,28 +31,34 @@ var accessOneHouse = (id, callback) => {
 };
 
 var addOneHouse = (house, callback) => {
-  Reviews.create(house, (err) => {
-    if (err) {
-      callback(err);
-    } else {
-      callback(null);
-    }
-  })
+  return model.Review.create(house).then((result) => {
+    callback(null, result);
+  }).catch(function (err) {callback(err)});
 };
 
 var addOneReview = (review, house_id, callback) => {
-  Reviews.findOne({'house_id': house_id}, (err, house) => {
+  //console.log('what info did addOneReview get?????', typeof house_id);
+  //find it, save it in a variable, add the review to it and save it
+  // model.Review.find({'house_id': house_id}, (err, result) => {
+  //   if (err) {
+  //     callback(err);
+  //   }
+  // }).exec((err, home) => {
+  //   if (err) {
+  //     callback(err);
+  //   } else {
+  //     console.log('hooooooome',home);
+  //     home.user_reviews.push(review);
+  //     home.save();
+  //     callback(null, results);
+  //   }
+  // })
+
+  model.Review.updateOne({'house_id': house_id}, {$push: {'user_reviews': review}}, {safe : true}, (err, result) => {
     if (err) {
       callback(err);
     } else {
-      house.user_reviews.push(review);
-      house.save((err) => {
-        if (err) {
-          callback(err);
-        } else {
-          callback(null);
-        }
-      });
+      callback(null, result);
     }
   })
 }
