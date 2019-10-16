@@ -5,6 +5,7 @@ const db = require('../database/db.js');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('../client/dist/index.html'));
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
