@@ -31,29 +31,12 @@ var accessOneHouse = (id, callback) => {
 };
 
 var addOneHouse = (house, callback) => {
-  return model.Review.create(house).then((result) => {
+  model.Review.create(house).then((result) => {
     callback(null, result);
   }).catch(function (err) {callback(err)});
 };
 
 var addOneReview = (review, house_id, callback) => {
-  //console.log('what info did addOneReview get?????', typeof house_id);
-  //find it, save it in a variable, add the review to it and save it
-  // model.Review.find({'house_id': house_id}, (err, result) => {
-  //   if (err) {
-  //     callback(err);
-  //   }
-  // }).exec((err, home) => {
-  //   if (err) {
-  //     callback(err);
-  //   } else {
-  //     console.log('hooooooome',home);
-  //     home.user_reviews.push(review);
-  //     home.save();
-  //     callback(null, results);
-  //   }
-  // })
-
   model.Review.updateOne({'house_id': house_id}, {$push: {'user_reviews': review}}, {safe : true}, (err, result) => {
     if (err) {
       callback(err);

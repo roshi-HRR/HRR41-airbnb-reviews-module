@@ -75,6 +75,13 @@ db.reset((err) => {
     addHouses(100);
     setTimeout(addReviews, 2000, 100);
     console.log('completed seeding DB :D');
-    //addReviews(3);
   }
 })
+
+module.exports = {
+  'randomNum': randomNum,
+  'createReview': createReview,
+  'createHouse': createHouse,
+  'addHouses': addHouses,
+  'addReviews': addReviews
+}

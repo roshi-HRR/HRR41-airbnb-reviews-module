@@ -5,6 +5,7 @@ const db = require('../database/db.js');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('../client/dist/index.html'));
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
@@ -39,7 +40,6 @@ app.post('/rooms/review', (req, res) => {
       console.log('error adding review to house in database:', err);
       res.end();
     } else {
-      //console.log('infooo recieved by router', req.body.review, req.body.house_id);
       console.log('review stored in house database successfully!!!');
       res.send(req.body);
     }
