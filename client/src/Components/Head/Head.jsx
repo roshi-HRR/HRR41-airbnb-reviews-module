@@ -8,7 +8,7 @@ class Head extends React.Component {
   }
 
   render() {
-    //prep to make the following code shorter
+    //prep to make the following code easier to read
     var house = this.props.house;
     var count = this.props.house.user_reviews_count;
     var hostName = this.props.house.host_name;
@@ -21,7 +21,7 @@ class Head extends React.Component {
       ratingTotals.push({'category': key, 'rating': ratings[key]});
     }
     ratingTotals.sort(function(a, b) {
-      return a - b;
+      return b.rating - a.rating;
     });
 
     //options for 0, 1, 2, or more reviews

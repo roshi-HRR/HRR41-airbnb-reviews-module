@@ -1,6 +1,6 @@
 import React from 'react';
-import Review from './Review.jsx';
-import ReviewList from './ReviewList.jsx';
+import Review from './ReviewList/Review.jsx';
+import ReviewList from './ReviewList/ReviewList.jsx';
 
 class Body extends React.Component {
   constructor(props) {

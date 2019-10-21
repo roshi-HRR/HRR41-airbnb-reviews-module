@@ -15,12 +15,12 @@ var createReview = () => {
     review_text: faker.lorem.sentences(),
     review_language: "English",
     review_ratings: {
-      communication: randomNum(0, 5, 1),
-      location: randomNum(0, 5, 1),
-      value: randomNum(0, 5, 1),
-      check_in: randomNum(0, 5, 1),
-      accuracy: randomNum(0, 5, 1),
-      cleanliness: randomNum(0, 5, 1)
+      communication: randomNum(1, 5, 1),
+      location: randomNum(1, 5, 1),
+      value: randomNum(1, 5, 1),
+      check_in: randomNum(1, 5, 1),
+      accuracy: randomNum(1, 5, 1),
+      cleanliness: randomNum(1, 5, 1)
     }
   };
   return review;
@@ -30,14 +30,14 @@ var createHouse = (id) => {
   var house = {
     house_id: id,
     host_name: faker.name.firstName(),
-    total_rating: randomNum(0, 5, 1),
+    total_rating: randomNum(1, 5, 1),
     total_rating_categories: {
-      communication: randomNum(0, 5, 1),
-      location: randomNum(0, 5, 1),
-      value: randomNum(0, 5, 1),
-      check_in: randomNum(0, 5, 1),
-      accuracy: randomNum(0, 5, 1),
-      cleanliness: randomNum(0, 5, 1)
+      communication: randomNum(1, 5, 1),
+      location: randomNum(1, 5, 1),
+      value: randomNum(1, 5, 1),
+      check_in: randomNum(1, 5, 1),
+      accuracy: randomNum(1, 5, 1),
+      cleanliness: randomNum(1, 5, 1)
     },
     user_reviews_count: 0,
     user_reviews: []
@@ -58,7 +58,7 @@ var addHouses = (num) => {
 
 var addReviews = (num) => {
   for (var i = 0; i < num; i++) {
-    var rando = randomNum(0, 300);
+    var rando = randomNum(0, 50);
     for (var j = 0; j < rando; j++) {
       var review = createReview();
       db.addOneReview(review, i, (err, result) => {

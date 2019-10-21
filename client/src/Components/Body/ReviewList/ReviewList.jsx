@@ -1,6 +1,6 @@
 import React from 'react';
 import Review from './Review.jsx';
-import CurrentViewSelect from './ViewSelector/CurrentViewSelect.jsx';
+import ViewSelector from '../ViewSelector/ViewSelector.jsx';
 
 class ReviewList extends React.Component {
   constructor(props) {
@@ -14,7 +14,6 @@ class ReviewList extends React.Component {
       if (this.props.reviews.length > 7) {
         var max = selected * 7;
         var min = max - 7;
-        console.log('slice', min, max);
         this.setState({reviewList: this.props.reviews.slice(min, max), 'selected': selected});
       } else {
         this.setState({reviewList: this.props.reviews, 'selected': selected});
@@ -30,10 +29,12 @@ class ReviewList extends React.Component {
     if (this.state.reviewList) {
       return(
         <div>
-          {/* My list of reviews */}
           {this.state.reviewList.map((el, i) => <Review key={i} num={i} review= {el}/>)}
-          {/* My View Selector */}
-          <CurrentViewSelect currentView={this.currentView} reviewCount={this.props.reviews.length} selected={this.state.selected}/>
+          <ViewSelector
+            currentView={this.currentView}
+            reviewCount={this.props.reviews.length}
+            selected={this.state.selected}
+          />
         </div>
       )
     } else {

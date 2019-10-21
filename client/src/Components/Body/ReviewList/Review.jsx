@@ -10,11 +10,9 @@ class Review extends React.Component {
     }
     this.readMore = this.readMore.bind(this);
   }
-
   readMore() {
     this.setState({readMoreClicked: true});
   }
-
   componentDidMount(){
     var review = this.props.review;
     if (review.review_text.length > 275) {
@@ -23,20 +21,14 @@ class Review extends React.Component {
       this.setState({length: 'short'});
     }
   }
-
   render() {
     var review = this.props.review;
     var text;
-    if (this.state.length === 'long') {
-      if (this.state.readMoreClicked) {
-        text = <div>{review.review_text}</div>;
-      } else {
-        text = <div>{review.review_text.slice(0, 275) + '...'}<a onClick={this.readMore}>Read more</a></div>;
-      }
-    } else {
+    if (this.state.length === 'short' || this.state.readMoreClicked) {
       text = <div>{review.review_text}</div>;
+    } else {
+      text = <div>{review.review_text.slice(0, 275) + '...'}<a onClick={this.readMore}>Read more</a></div>;
     }
-
     return(
       <div>
         <span><a href={review.review_pic}></a></span>
