@@ -37,11 +37,14 @@ var addOneHouse = (house, callback) => {
 };
 
 var addOneReview = (review, house_id, callback) => {
-  model.Review.updateOne({'house_id': house_id}, {$push: {'user_reviews': review}}, {safe : true}, (err, result) => {
+  //access the house and the review totals
+    //take the input review subcategories and add them to the total
+    //replace the total star and the total subcategories
+  model.Review.updateOne({'house_id': house_id}, {$push: {'user_reviews': review}, $inc: {user_reviews_count: 1}}, {safe: true, new: true}, (err, result) => {
     if (err) {
       callback(err);
     } else {
-      callback(null, result);
+        callback(null, result);
     }
   })
 }

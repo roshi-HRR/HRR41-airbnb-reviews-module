@@ -5,14 +5,14 @@ const db = require('../database/db.js');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static('../client/dist/index.html'));
+app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
-app.get(`/rooms`, (req, res) => {
-  db.accessOneHouse(req.body.id, (err, house) => {
+app.get(`/rooms/:id`, (req, res) => {
+  db.accessOneHouse(req.params.id, (err, house) => {
     if (err) {
       console.log('error accessing the data of one house:', err);
       res.end();

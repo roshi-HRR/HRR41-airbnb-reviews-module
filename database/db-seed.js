@@ -29,15 +29,17 @@ var createReview = () => {
 var createHouse = (id) => {
   var house = {
     house_id: id,
-    total_rating: null,
+    host_name: faker.name.firstName(),
+    total_rating: randomNum(0, 5, 1),
     total_rating_categories: {
-      communication: null,
-      location: null,
-      value: null,
-      check_in: null,
-      accuracy: null,
-      cleanliness: null
+      communication: randomNum(0, 5, 1),
+      location: randomNum(0, 5, 1),
+      value: randomNum(0, 5, 1),
+      check_in: randomNum(0, 5, 1),
+      accuracy: randomNum(0, 5, 1),
+      cleanliness: randomNum(0, 5, 1)
     },
+    user_reviews_count: 0,
     user_reviews: []
   };
   return house;
