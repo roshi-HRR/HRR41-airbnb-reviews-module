@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Review from './Review.jsx';
 import ViewSelector from '../ViewSelector/ViewSelector.jsx';
 
-class ReviewList extends React.Component {
+class ReviewList extends Component {
   constructor(props) {
     super(props);
     this.state = {};

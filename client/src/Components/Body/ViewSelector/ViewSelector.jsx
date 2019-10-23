@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Beginning from './Views/Beginning.jsx';
 import End from './Views/End.jsx';
 import Mid from './Views/Mid.jsx';
 
-class CurrentViewSelect extends React.Component {
+class CurrentViewSelect extends Component {
   constructor(props) {
     super(props)
     this.state = {}

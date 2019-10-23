@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class SubRatingTotal extends React.Component {
+class SubRatingTotal extends Component {
   constructor(props) {
     super(props);
   }

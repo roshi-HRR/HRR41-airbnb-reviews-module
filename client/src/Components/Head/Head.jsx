@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import SubRatingTotal from './SubRatingTotal.jsx'
 
-class Head extends React.Component {
+class Head extends Component {
   constructor(props) {
     super(props)
     this.state = {}

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Review from './ReviewList/Review.jsx';
 import ReviewList from './ReviewList/ReviewList.jsx';
 
-class Body extends React.Component {
+class Body extends Component {
   constructor(props) {
     super(props)
     this.state = {}

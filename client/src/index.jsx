@@ -1,13 +1,12 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const $ = require('jquery');
-const axios = require('axios').default;
-import Body from './Components/Body/Body.jsx'
-import Head from './Components/Head/Head.jsx'
-//const Body = require('./Components/Body.jsx');
-//const Head = require('./Components/Head.jsx');
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import $ from 'jquery';
+import styled from 'styled-components';
+import Body from './Components/Body/Body.jsx';
+import Head from './Components/Head/Head.jsx';
 
-class App extends React.Component {
+
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
