@@ -18,6 +18,7 @@ var user_reviewSchema = new mongoose.Schema({
 
 var reviewSchema = new mongoose.Schema({
   house_id: { type: Number, unique: true },
+  host_name: String,
   total_rating: Number,
   total_rating_categories: {
     communication: Number,
@@ -27,6 +28,7 @@ var reviewSchema = new mongoose.Schema({
     accuracy: Number,
     cleanliness: Number
   },
+  user_reviews_count: Number,
   user_reviews: [user_reviewSchema]
 })
 
