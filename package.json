@@ -1,9 +1,8 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "hrr41-airbnb-reviews-service",
+  "description": "> Project description",
   "author": "",
-  "license": "",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
@@ -34,9 +33,22 @@
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "babel-loader": "^8.0.6",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "jest": "^24.9.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
-  }
+  },
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roshi-HRR/HRR41-airbnb-reviews-service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roshi-HRR/HRR41-airbnb-reviews-service/issues"
+  },
+  "homepage": "https://github.com/roshi-HRR/HRR41-airbnb-reviews-service#readme"
 }
