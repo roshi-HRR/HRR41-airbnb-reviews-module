@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import styled from 'styled-components';
 import Body from './Components/Body/Body.jsx';
 import Head from './Components/Head/Head.jsx';
-
 
 class App extends Component {
   constructor(props) {
