@@ -16,7 +16,9 @@ class App extends Component {
 
   //currently calling data for a random room
   fetch() {
-    $.get( `/rooms/${Math.floor(Math.random() * 100)}`, (data) => {
+    const url = new URL(window.location.href);
+    const houseId = url.searchParams.get('house_id');
+    $.get( `/rooms/${houseId}`, (data) => {
       this.setState({'house': data});
     });
   }

@@ -46,7 +46,7 @@ var createHouse = (id) => {
 }
 
 var addHouses = (num) => {
-  for (var i = 0; i < num; i++) {
+  for (var i = 1; i <= num; i++) {
     var house = createHouse(i);
     db.addOneHouse(house, (err, result) => {
       if (err) {
