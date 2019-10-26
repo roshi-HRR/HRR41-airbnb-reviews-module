@@ -61,6 +61,12 @@ var addReviews = (num) => {
     var rando = randomNum(0, 100);
     for (var j = 0; j < rando; j++) {
       var review = createReview();
+      if (rando % 2 === 0) {
+        review.text = faker.lorem.paragraphs();
+      }
+      if (rando % 10 === 0) {
+        review.text = review.text + ' ' + faker.lorem.paragraphs();
+      }
       db.addOneReview(review, i, (err, result) => {
         if (err) {
           console.log('error adding review to house during seeding:', err);
