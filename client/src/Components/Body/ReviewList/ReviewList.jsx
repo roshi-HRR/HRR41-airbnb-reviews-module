@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Review from './Review.jsx';
-import ViewSelector from '../ViewSelector/ViewSelector.jsx';
+import ViewSelector from './ViewSelector/ViewSelector.jsx';
+import styles, {main, viewSelector} from './ReviewList.css';
 
-class ReviewList extends React.Component {
+class ReviewList extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -28,13 +29,15 @@ class ReviewList extends React.Component {
   render(){
     if (this.state.reviewList) {
       return(
-        <div>
+        <div className={main}>
           {this.state.reviewList.map((el, i) => <Review key={i} num={i} review= {el}/>)}
-          <ViewSelector
-            currentView={this.currentView}
-            reviewCount={this.props.reviews.length}
-            selected={this.state.selected}
-          />
+          <div className={viewSelector}>
+            <ViewSelector
+              currentView={this.currentView}
+              reviewCount={this.props.reviews.length}
+              selected={this.state.selected}
+            />
+          </div>
         </div>
       )
     } else {

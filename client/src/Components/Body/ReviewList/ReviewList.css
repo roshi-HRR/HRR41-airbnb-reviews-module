@@ -1,0 +1,10 @@
+.main {
+  margin-top: 16px;
+  display: flex;
+  flex-flow: row wrap;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(225, 224, 224, 0.495);
+}
+.viewSelector {
+  margin: 16px;
+}

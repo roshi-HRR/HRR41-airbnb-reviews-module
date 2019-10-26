@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Beginning from './Views/Beginning.jsx';
 import End from './Views/End.jsx';
 import Mid from './Views/Mid.jsx';
+import styles, {right, left, selectedStyle, number, elipses} from './ViewSelector.css'
 
-class CurrentViewSelect extends React.Component {
+class CurrentViewSelect extends Component {
   constructor(props) {
     super(props)
     this.state = {}
@@ -28,16 +29,16 @@ class CurrentViewSelect extends React.Component {
       var array = [];
       for (var i = 1; i <= views; i++) {
         if (i === selected) {
-          array.push(<span className='selected' key={Math.random()}>{i}</span>);
+          array.push(<span className={selectedStyle} key={Math.random()}>{i}</span>);
         } else {
-          array.push(<span onClick={currentView.bind(null, i)} key={Math.random()}>{i}</span>);
+          array.push(<span className={number} onClick={currentView.bind(null, i)} key={Math.random()}>{i}</span>);
         }
       }
       if (selected !== 1) {
-        array.unshift(<span onClick={currentView.bind(null, selected - 1)} key={Math.random()}>BACK</span>);
+        array.unshift(<span className={number} onClick={currentView.bind(null, selected - 1)} key={Math.random()}><img className={left} src='/assets/Left.png'></img></span>);
       }
       if (selected !== views) {
-        array.push(<span onClick={currentView.bind(null, selected + 1)} key={Math.random()}>></span>);
+        array.push(<span className={number} onClick={currentView.bind(null, selected + 1)} key={Math.random()}><img className={right} src='/assets/Right.png'></img></span>);
       }
       return (
         <div>
