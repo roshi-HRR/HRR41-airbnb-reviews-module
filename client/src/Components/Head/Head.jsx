@@ -69,7 +69,7 @@ class Head extends Component {
       <p className={title}>Reviews</p>
       <div className='completeTotals'>
         <span className={totalStar}>
-          <img className={star} src='/assets/Star.png' alt='*'></img>
+          <img className={star} src='https://rachels-review-bucket.s3.amazonaws.com/Star.png' alt='*'></img>
           <span className='totalStar' className={numbers}>{house.total_rating || 'no rating yet :('}</span>
         </span>
         <span className={reviewCount}>

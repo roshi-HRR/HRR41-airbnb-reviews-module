@@ -10,11 +10,10 @@ class SubRatingTotal extends Component {
     return (
       <div className={main}>
         <span className={category}>{rating.category}</span>
-        <span><img className={line} src='/assets/Line.png' alt='*'></img></span>
+        <span><img className={line} src='https://rachels-review-bucket.s3.amazonaws.com/Line.png' alt='*'></img></span>
         <span className={numbers}>{rating.rating}</span>
       </div>
     )
   }
 }
-
 export default SubRatingTotal;

@@ -35,10 +35,10 @@ class CurrentViewSelect extends Component {
         }
       }
       if (selected !== 1) {
-        array.unshift(<span className={number} onClick={currentView.bind(null, selected - 1)} key={Math.random()}><img className={left} src='/assets/Left.png'></img></span>);
+        array.unshift(<span className={number} onClick={currentView.bind(null, selected - 1)} key={Math.random()}><img className={left} src='https://rachels-review-bucket.s3.amazonaws.com/Left.png'></img></span>);
       }
       if (selected !== views) {
-        array.push(<span className={number} onClick={currentView.bind(null, selected + 1)} key={Math.random()}><img className={right} src='/assets/Right.png'></img></span>);
+        array.push(<span className={number} onClick={currentView.bind(null, selected + 1)} key={Math.random()}><img className={right} src='https://rachels-review-bucket.s3.amazonaws.com/Right.png'></img></span>);
       }
       return (
         <div>
