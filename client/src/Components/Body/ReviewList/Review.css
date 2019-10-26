@@ -1,0 +1,49 @@
+.main {
+  margin: 12px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgb(232, 231, 231);
+}
+.info {
+  display: inline-block;
+}
+.pic {
+  background-color: #D8D8D8;
+  border-radius: 50%;
+  border-width: 2px;
+  border-color: #ffffff;
+  height: 48px;
+  width: 48px;
+  margin-right: 10px;
+}
+.name {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.375em;
+  color: #484848;
+  display: block;
+}
+.date {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2857142857142858em;
+  color: #484848;
+  display: block;
+}
+.textStyles {
+  width: 648px;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.375em;
+  color: #484848;
+  margin-top: 10px;
+}
+.readMore {
+  background-color: lightsalmon;
+  text-decoration: #008489;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
