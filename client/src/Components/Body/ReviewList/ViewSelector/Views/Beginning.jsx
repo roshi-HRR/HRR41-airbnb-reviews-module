@@ -7,9 +7,7 @@ class Beginning extends Component {
     super(props);
   }
   render() {
-    var selected = this.props.selected;
-    var currentView = this.props.currentView;
-    var views = this.props.views;
+    const { selected, currentView, views } = this.props;
     if (selected === 1) {
       return (
         <div>

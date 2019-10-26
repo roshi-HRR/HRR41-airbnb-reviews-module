@@ -54,7 +54,7 @@ class End extends Component {
           <span onClick={currentView.bind(null, selected - 1)}><img className={left} src='/assets/Left.png'></img></span>
           <span className={number} onClick={currentView.bind(null, 1)}>1</span>
           <span><img className={elipses} src='/assets/Elipses.png'></img></span>
-          <span className={number} onClick={currentView.bind(null, selected - 1)}>{selected - 2}</span>
+          <span className={number} onClick={currentView.bind(null, selected - 2)}>{selected - 2}</span>
           <span className={number} onClick={currentView.bind(null, selected - 1)}>{selected - 1}</span>
           <span className={selectedStyle}>{selected}</span>
         </div>
