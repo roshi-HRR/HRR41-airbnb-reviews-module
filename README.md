@@ -17,11 +17,11 @@
 
 ## Usage
 
-> clone repo
-> npm install
-> npm run seedDB
-> npm run build
-> npm start
+- clone repo
+- npm install
+- npm run seedDB
+- npm run build
+- npm start
 
 ## Requirements
 
