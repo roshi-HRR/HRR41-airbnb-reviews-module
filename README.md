@@ -1,13 +1,13 @@
-# Project Name
+# Airbnb Clone: Reviews Service
 
-> Project description
+> This is a clone of the airbnb homes detail page reviews module.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/roshi-HRR/main-photo-carousel-Service
+  - https://github.com/roshi-HRR/HRR41-more-homes-module
+  - https://github.com/roshi-HRR/HRR41-bookings-module-service
+  - https://github.com/roshi-HRR/HRR-House
 
 ## Table of Contents
 
@@ -17,7 +17,11 @@
 
 ## Usage
 
-> Some usage instructions
+> clone repo
+> npm install
+> npm run seedDB
+> npm run build
+> npm start
 
 ## Requirements
 
