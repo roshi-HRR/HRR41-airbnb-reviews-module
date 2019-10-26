@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import styles, {main, line, numbers, category, categoryContainer} from './SubRatingTotal.css';
 
 class SubRatingTotal extends Component {
   constructor(props) {
@@ -7,10 +8,10 @@ class SubRatingTotal extends Component {
   render() {
     var rating = this.props.rating;
     return (
-      <div>
-        <span>{rating.category}</span>
-        <span>LIIIINE</span>
-        <span>{rating.rating}</span>
+      <div className={main}>
+        <span className={category}>{rating.category}</span>
+        <span><img className={line} src='/assets/Line.png' alt='*'></img></span>
+        <span className={numbers}>{rating.rating}</span>
       </div>
     )
   }

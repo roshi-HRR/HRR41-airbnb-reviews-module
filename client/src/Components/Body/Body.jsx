@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Review from './ReviewList/Review.jsx';
 import ReviewList from './ReviewList/ReviewList.jsx';
+import styles, {main} from './Body.css';
 
 class Body extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class Body extends Component {
     var reviews = this.props.house.user_reviews;
     if (reviews) {
       return (
-      <div>
+      <div className={main}>
         <ReviewList reviews={reviews}/>
       </div>
       )

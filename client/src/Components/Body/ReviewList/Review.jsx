@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import $ from 'jquery';
+import styles, {info, main, pic, name, date, textStyles, readMore} from './Review.css';
 
 class Review extends Component {
   constructor(props) {
@@ -30,11 +30,13 @@ class Review extends Component {
       text = <div>{review.review_text.slice(0, 275) + '...'}<a onClick={this.readMore}>Read more</a></div>;
     }
     return(
-      <div>
-        <span><a href={review.review_pic}></a></span>
-        <span>{review.user_name}</span>
-        <span>{review.review_date}</span>
-        <div>
+      <div className={main}>
+        <span><img className={pic} src={review.user_pic}></img></span>
+        <div className={info}>
+          <span className={name}>{review.user_name}</span>
+          <span className={date}>{review.review_date}</span>
+        </div>
+        <div className={textStyles}>
           {text}
         </div>
       </div>

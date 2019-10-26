@@ -7,12 +7,12 @@ var user_reviewSchema = new mongoose.Schema({
   review_date: String,
   review_text: String,
   review_ratings: {
-    communication: Number,
-    location: Number,
-    value: Number,
-    check_in: Number,
-    accuracy: Number,
-    cleanliness: Number
+    Communication: Number,
+    Location: Number,
+    Value: Number,
+    'Check-in': Number,
+    Accuracy: Number,
+    Cleanliness: Number
   }
 })
 
@@ -21,12 +21,12 @@ var reviewSchema = new mongoose.Schema({
   host_name: String,
   total_rating: Number,
   total_rating_categories: {
-    communication: Number,
-    location: Number,
-    value: Number,
-    check_in: Number,
-    accuracy: Number,
-    cleanliness: Number
+    Communication: Number,
+    Location: Number,
+    Value: Number,
+    'Check-in': Number,
+    Accuracy: Number,
+    Cleanliness: Number
   },
   user_reviews_count: Number,
   user_reviews: [user_reviewSchema]

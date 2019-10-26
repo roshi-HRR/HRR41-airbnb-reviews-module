@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-//import CSSModules from 'react-css-modules';
-import './Head.css';
+import styles, {reviewCount, main, title, writing, numbers, search, subTotals, totalStar, star} from './Head.css';
 import SubRatingTotal from './SubRatingTotal.jsx';
 
 class Head extends Component {
@@ -29,9 +28,9 @@ class Head extends Component {
     //options for 0, 1, 2, or more reviews
     if (count === 0) {
       return(
-        <div>
-          <p className='title'>No reviews (yet)</p>
-          <p className='writing'>Be one of the first to review {hostName}'s place to help them get started</p>
+        <div className={main}>
+          <p className={title}>No reviews (yet)</p>
+          <p className={writing}>Be one of the first to review {hostName}'s place to help them get started</p>
           <span>
             <img src={'/Users/rachnovo/Desktop/HRR41/FEC/RefundPolicyImage.png'} alt={''} />
           </span>
@@ -40,46 +39,49 @@ class Head extends Component {
       )
       } else if (count === 1) {
         return (
-          <div>
-            <p className='title'>Review</p>
+          <div className={main}>
+            <p className={title}>Review</p>
             <div>
               <div>
-                <span className='numbers'>1</span>
-                <span className='writing'>Review</span>
+                <span className={numbers}>1</span>
+                <span className={writing}>Review</span>
               </div>
-              <span className='search'>Search:</span>
+              <span className={search}>Search:</span>
             </div>
           </div>
         )
     } else if (count === 2) {
       return (
-        <div>
-          <p className='title'>Reviews</p>
+        <div className={main}>
+          <p className={title}>Reviews</p>
           <div>
             <div>
-              <span className='numbers'>2</span>
-              <span className='writing'>Reviews</span>
+              <span className={numbers}>2</span>
+              <span className={writing}>Reviews</span>
             </div>
-            <span className='search'>Search:</span>
+            <span className={search}>Search:</span>
           </div>
         </div>
       )
     }
     return (
-    <div className='HeadContainer'>
-      <p className='title'>Reviews</p>
+    <div className={main}>
+      <p className={title}>Reviews</p>
       <div className='completeTotals'>
-        <div className='totalStar'>
-          <span className='*****ADD STARRRRR******'></span>
-          <span className='totalStar'>{house.total_rating || 'no rating yet :('}</span>
-
-        </div>
-        <span className='reviewCount' className='writing'>{house.user_reviews_count} reviews</span>
-        <span className='search'>Search:</span>
+        <span className={totalStar}>
+          <img className={star} src='/assets/Star.png' alt='*'></img>
+          <span className='totalStar' className={numbers}>{house.total_rating || 'no rating yet :('}</span>
+        </span>
+        <span className={reviewCount}>
+          <span className={numbers}>{house.user_reviews_count}</span>
+          <span className={writing}>reviews</span>
+        </span>
       </div>
-      <div className='subTotals'>
+      <div className={subTotals}>
         {ratingTotals ? ratingTotals.map((el, i) => <SubRatingTotal key={i} rating={el}/>) : ''}
       </div>
+      {/* <span className={search}>Search:</span> */}
+      <input className={search} type="text" placeholder="Search reviews"></input>
     </div>
     )
   }
