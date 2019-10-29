@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, createRef} from 'react';
 import Review from './Review.jsx';
 import ViewSelector from './ViewSelector/ViewSelector.jsx';
 import styles, {main, viewSelector} from './ReviewList.css';
@@ -7,6 +7,7 @@ class ReviewList extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.ref = createRef();
     this.currentView = this.currentView.bind(this);
   }
 
@@ -20,6 +21,12 @@ class ReviewList extends Component {
         this.setState({reviewList: this.props.reviews, 'selected': selected});
       }
     }
+    if (this.ref.current) {
+      this.ref.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
   }
 
   componentDidMount() {
@@ -29,7 +36,7 @@ class ReviewList extends Component {
   render(){
     if (this.state.reviewList) {
       return(
-        <div className={main}>
+        <div className={main} ref={this.ref}>
           {this.state.reviewList.map((el, i) => <Review key={i} num={i} review= {el}/>)}
           <div className={viewSelector}>
             <ViewSelector
