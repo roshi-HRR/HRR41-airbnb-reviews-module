@@ -19,10 +19,19 @@
   float: left;
 }
 .line {
+  position: absolute;
+  height: 21px;
+  /* width: 100px; */
+  margin-right: 5px;
+  z-index: 2;
+  /* float: left; */
+}
+.under {
+  /* position: absolute; */
   height: 20px;
   width: 100px;
   margin-right: 5px;
-
+  z-index: 1;
 }
 .numbers {
   /* background-color: aquamarine; */
