@@ -7,7 +7,6 @@ class SubRatingTotal extends Component {
   }
   render() {
     var rating = this.props.rating;
-    console.log(rating.rating * 20);
     return (
       <div className={main}>
         <span className={category}>{rating.category}</span>

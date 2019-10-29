@@ -17,6 +17,7 @@ app.get(`/rooms/:id`, (req, res) => {
       console.log('error accessing the data of one house:', err);
       res.end();
     } else {
+      res.setHeader('Cache-Control', 'max-age=31536000');
       res.send(house);
     }
   })
