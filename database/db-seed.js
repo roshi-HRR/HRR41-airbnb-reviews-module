@@ -57,20 +57,22 @@ var addHouses = (num) => {
 }
 
 var addReviews = (num) => {
-  for (var i = 1; i < num; i++) {
+	for (var i = 1; i <= num; i++) {
     var rando = randomNum(0, 300);
     for (var j = 0; j < rando; j++) {
       var review = createReview();
-      if (rando % 2 === 0) {
-        review.text = faker.lorem.paragraphs();
-      }
-      if (rando % 10 === 0) {
-        review.text = review.text + ' ' + faker.lorem.paragraphs();
-      }
+//      if (rando % 2 === 0) {
+//        review.text = faker.lorem.paragraphs();
+//      }
+//      if (rando % 10 === 0) {
+//        review.text = review.text + ' ' + faker.lorem.paragraphs();
+//      }
       db.addOneReview(review, i, (err, result) => {
         if (err) {
           console.log('error adding review to house during seeding:', err);
-        }
+        } else {
+	console.log('called addOneReview function');
+	}
       })
     }
   }
@@ -81,7 +83,7 @@ db.reset((err) => {
     console.log('error deleting old records when seeding db:', err);
   } else {
     addHouses(100);
-    setTimeout(addReviews, 2000, 100);
+    setTimeout(addReviews, 5000, 100);
     console.log('completed seeding DB :D');
   }
 })
