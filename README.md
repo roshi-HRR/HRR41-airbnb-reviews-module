@@ -1,6 +1,6 @@
-# Airbnb Clone: Reviews Service
+# Lodging Marketplace App: Reviews Service
 
-> This is a clone of the airbnb homes detail page reviews module.
+> This is the reviews service of a lodging marketplace app. It is one service out of the 5 listed below for the full app.
 
 ## Related Projects
 
