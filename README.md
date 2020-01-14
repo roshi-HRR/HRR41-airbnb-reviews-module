@@ -1,6 +1,6 @@
 # Lodging Marketplace App: Reviews Service
 
-> This is the reviews service of a lodging marketplace app. It is one service out of the 5 listed below for the full app.
+> This is the reviews service of a lodging marketplace app. It is one service out of 5 (others listed below) for the full app.
 
 ## Related Projects
 
