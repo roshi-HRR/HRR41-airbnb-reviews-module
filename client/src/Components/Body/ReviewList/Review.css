@@ -16,7 +16,7 @@
   margin-right: 10px;
 }
 .name {
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.375em;
@@ -24,10 +24,10 @@
   display: block;
 }
 .date {
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.2857142857142858em;
+  line-height: 1.3em;
   color: #484848;
   display: block;
 }
@@ -35,7 +35,7 @@
   width: 648px;
   margin: 0px;
   word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.375em;
@@ -44,6 +44,6 @@
 }
 .readMore {
   background-color: lightsalmon;
-  text-decoration: #008489;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  text-decoration: #4f1bdd;
+  font-family: sans-serif;
 }

@@ -19,7 +19,7 @@
 
 - clone repo
 - npm install
-- npm run seedDB
+- npm run seedDB (install mongoDB if you don't have it)
 - npm run build
 - npm start
 

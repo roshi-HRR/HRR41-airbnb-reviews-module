@@ -6,9 +6,7 @@ class End extends Component {
     super(props);
   }
   render() {
-    var selected = this.props.selected;
-    var currentView = this.props.currentView;
-    var views = this.props.views;
+    const { selected, currentView, views } = this.props;
     if (selected === views - 3) {
       return (
         <div>

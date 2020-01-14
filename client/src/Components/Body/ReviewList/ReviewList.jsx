@@ -37,7 +37,7 @@ class ReviewList extends Component {
     if (this.state.reviewList) {
       return(
         <div className={main} ref={this.ref}>
-          {this.state.reviewList.map((el, i) => <Review key={i} num={i} review= {el}/>)}
+          {this.state.reviewList.map((el, i) => <Review user_id={el.user_id} key={i} num={i} review={el}/>)}
           <div className={viewSelector}>
             <ViewSelector
               currentView={this.currentView}

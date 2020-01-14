@@ -6,9 +6,7 @@ class Mid extends Component {
     super(props);
   }
   render() {
-    var selected = this.props.selected;
-    var currentView = this.props.currentView;
-    var views = this.props.views;
+    const { selected, currentView, views } = this.props;
     return (
       <div>
         <span onClick={currentView.bind(null, selected - 1)}><img className={left} src='https://rachels-review-bucket.s3.amazonaws.com/Left.png'></img></span>

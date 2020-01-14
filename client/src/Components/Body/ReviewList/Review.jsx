@@ -30,7 +30,7 @@ class Review extends Component {
       text = <div>{review.review_text.slice(0, 275) + '...'}<a onClick={this.readMore}>Read more</a></div>;
     }
     return(
-      <div className={main}>
+      <div className={main} id={review.user_id}>
         <span><img className={pic} src={review.user_pic}></img></span>
         <div className={info}>
           <span className={name}>{review.user_name}</span>
