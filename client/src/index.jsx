@@ -14,7 +14,6 @@ class App extends Component {
     this.fetch = this.fetch.bind(this);
   }
 
-  //currently calling data for a random room
   fetch() {
     const url = new URL(window.location.href);
     const houseId = url.searchParams.get('house_id');
